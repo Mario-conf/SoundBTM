@@ -8,14 +8,12 @@ function loginUser() {
     const authenticatedUser = users.find(
       user => (user.username === loginIdentifier || user.email === loginIdentifier) && user.password === password
     );
-  
-    if (authenticatedUser) {
+   if (authenticatedUser) {
       // Redirigir a la aplicación principal después del inicio de sesión
-      window.location.href = 'index.html';
+      window.location.href = 'app.html';
     } else {
       alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');
     }
-  }
 function getStoredUsers() {
     const storedUsers = localStorage.getItem('users');
     return storedUsers ? JSON.parse(storedUsers) : [];
