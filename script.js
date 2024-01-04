@@ -1,10 +1,6 @@
-
 function logout() {
-  // Puedes agregar lógica adicional aquí según sea necesario
-  // En este ejemplo, simplemente redirigimos a la página de inicio de sesión
   window.location.href = 'index.html';
 }
-
 // Array de sonidos con sus rutas
 const sounds = [
   { name: 'Sonido 1', path: './src/sound1.mp3' },
@@ -69,26 +65,35 @@ const sounds = [
   // Agrega más sonidos según sea necesario
 ];
 
-// Función para reproducir un sonido por su nombre
-function playSound(soundName) {
-  // Detener todos los sonidos antes de reproducir el nuevo
-  stopAllSounds();
+// Variable para almacenar el sonido actualmente en reproducción
+let currentSound = null;
+
+// Función para reproducir el sonido por su nombre
+function playSoundByName(soundName) {
+  // Detener el sonido actualmente en reproducción, si hay alguno
+  if (currentSound) {
+    currentSound.pause();
+    currentSound.currentTime = 0; // Reinicia la reproducción al principio del sonido
+  }
 
   // Buscar el sonido en el array por su nombre
   const sound = sounds.find(sound => sound.name === soundName);
 
   // Reproducir el sonido si se encuentra
   if (sound) {
-    const audioElement = new Audio(sound.path);
-    audioElement.play();
+    currentSound = new Audio(sound.path);
+    currentSound.play();
   }
 }
 
 // Función para detener todos los sonidos
 function stopAllSounds() {
-  // Detener cualquier sonido que se esté reproduciendo
-  const audioElements = document.querySelectorAll('audio');
-  audioElements.forEach(audio => audio.pause());
+  // Detener el sonido actualmente en reproducción, si hay alguno
+  if (currentSound) {
+    currentSound.pause();
+    currentSound.currentTime = 0; // Reinicia la reproducción al principio del sonido
+    currentSound = null;
+  }
 }
 
 // Crear botones de sonido dinámicamente
@@ -101,7 +106,7 @@ sounds.forEach((sound) => {
 
   // Asocia el evento de clic a la reproducción del sonido
   button.addEventListener('click', () => {
-    playSound(sound.path);
+    playSoundByName(sound.name);
   });
 
   drumPadContainer.appendChild(button);
