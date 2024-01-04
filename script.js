@@ -1,9 +1,8 @@
-// navbar.js
 
 function logout() {
   // Puedes agregar lógica adicional aquí según sea necesario
   // En este ejemplo, simplemente redirigimos a la página de inicio de sesión
-  window.location.href = 'login.html';
+  window.location.href = 'index.html';
 }
 
 // Array de sonidos con sus rutas
