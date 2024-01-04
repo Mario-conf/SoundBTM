@@ -91,3 +91,23 @@ sounds.forEach((sound) => {
   drumPadContainer.appendChild(button);
 });
 
+// Función para reproducir un sonido por su ID
+function playSound(soundId) {
+  // Detener todos los sonidos antes de reproducir el nuevo
+  stopAllSounds();
+
+  // Obtener el elemento de audio por su ID
+  const sound = document.getElementById(soundId);
+
+  // Reproducir el sonido
+  if (sound) {
+    sound.play();
+  }
+}
+
+// Función para detener todos los sonidos
+function stopAllSounds() {
+  // Obtener todos los elementos de audio y detenerlos
+  const sounds = document.querySelectorAll('audio');
+  sounds.forEach(sound => sound.pause());
+}
