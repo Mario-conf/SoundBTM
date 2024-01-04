@@ -69,10 +69,26 @@ const sounds = [
   // Agrega más sonidos según sea necesario
 ];
 
-// Función para reproducir el sonido
-function playSound(path) {
-  const audio = new Audio(path);
-  audio.play();
+// Función para reproducir un sonido por su nombre
+function playSound(soundName) {
+  // Detener todos los sonidos antes de reproducir el nuevo
+  stopAllSounds();
+
+  // Buscar el sonido en el array por su nombre
+  const sound = sounds.find(sound => sound.name === soundName);
+
+  // Reproducir el sonido si se encuentra
+  if (sound) {
+    const audioElement = new Audio(sound.path);
+    audioElement.play();
+  }
+}
+
+// Función para detener todos los sonidos
+function stopAllSounds() {
+  // Detener cualquier sonido que se esté reproduciendo
+  const audioElements = document.querySelectorAll('audio');
+  audioElements.forEach(audio => audio.pause());
 }
 
 // Crear botones de sonido dinámicamente
@@ -90,24 +106,3 @@ sounds.forEach((sound) => {
 
   drumPadContainer.appendChild(button);
 });
-
-// Función para reproducir un sonido por su ID
-function playSound(soundId) {
-  // Detener todos los sonidos antes de reproducir el nuevo
-  stopAllSounds();
-
-  // Obtener el elemento de audio por su ID
-  const sound = document.getElementById(soundId);
-
-  // Reproducir el sonido
-  if (sound) {
-    sound.play();
-  }
-}
-
-// Función para detener todos los sonidos
-function stopAllSounds() {
-  // Obtener todos los elementos de audio y detenerlos
-  const sounds = document.querySelectorAll('audio');
-  sounds.forEach(sound => sound.pause());
-}
