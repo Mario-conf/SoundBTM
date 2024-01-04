@@ -1,0 +1,82 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Agrega esto en el head de tu HTML -->
+<script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js"></script>
+<script src="app.js"></script>
+
+  <title>Login</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      background-color: #282c34;
+      color: white;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #61dafb;
+      color: #282c34;
+      border: 2px solid #61dafb;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #282c34;
+      color: #61dafb;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+      <label for="loginIdentifier">Usuario o Correo:</label>
+      <input type="text" id="loginIdentifier" name="loginIdentifier" required>
+
+      <label for="loginPassword">Contraseña:</label>
+      <input type="password" id="loginPassword" name="loginPassword" required>
+
+      <button type="button" onclick="loginUser()">Iniciar Sesión</button>
+    </form>
+
+    <p>¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a></p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
