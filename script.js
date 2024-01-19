@@ -69,12 +69,12 @@ const sounds = [
   { name: 'Sonido 64', path: './src/sound64.mp3' },
   { name: 'Sonido 65', path: './src/sound65.mp3' },
 
-  { name: 'Sonido 66', path: './src/sound66.mp3' },
-  { name: 'Sonido 67', path: './src/sound67.mp3' },
-  { name: 'Sonido 68', path: './src/sound68.mp3' },
-  { name: 'Sonido 69', path: './src/sound69.mp3' },
-  { name: 'Sonido 70', path: './src/sound70.mp3' },
-  // Agrega más sonidos según sea necesario
+  //{ name: 'Sonido 66', path: './src/sound66.mp3' },
+  //{ name: 'Sonido 67', path: './src/sound67.mp3' },
+  //{ name: 'Sonido 68', path: './src/sound68.mp3' },
+  //{ name: 'Sonido 69', path: './src/sound69.mp3' },
+  //{ name: 'Sonido 70', path: './src/sound70.mp3' },
+  
 ];
 
 // Variable para almacenar el sonido actualmente en reproducción
