@@ -62,6 +62,11 @@ const sounds = [
   { name: 'Sonido 48', path: './src/sound48.mp3' },
   { name: 'Sonido 49', path: './src/sound49.mp3' },
   { name: 'Sonido 50', path: './src/sound50.mp3' },
+  { name: 'Sonido 61', path: './src/sound61.mp3' },
+  { name: 'Sonido 62', path: './src/sound62.mp3' },
+  { name: 'Sonido 63', path: './src/sound63.mp3' },
+  { name: 'Sonido 64', path: './src/sound64.mp3' },
+  { name: 'Sonido 65', path: './src/sound65.mp3' },
   // Agrega más sonidos según sea necesario
 ];
 
